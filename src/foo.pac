@@ -27,7 +27,7 @@ type FOO_PDU(is_orig: bool) = record {
     plen:       uint8;
     ptype:      uint8;
     something:  bytestring &restofdata;
-} &byteorder=bigendian &length=hdr.len;
+} &byteorder=bigendian, &length=hdr.len;
 
 # Now we define the flow:
 flow FOO_Flow(is_orig: bool) {
